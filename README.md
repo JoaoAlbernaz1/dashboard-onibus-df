@@ -15,6 +15,17 @@ npx expo start
 Depois leia o QR Code com o app **Expo Go** (Android/iOS) ou pressione `a` para abrir no emulador
 Android.
 
+## Qualidade e integração contínua
+
+O projeto usa TypeScript em modo estrito (`strict: true`). Para validar tipos sem iniciar o Expo:
+
+```bash
+npm ci
+npm run typecheck
+```
+
+O workflow [Expo TypeScript checks](.github/workflows/typecheck.yml) executa esses comandos automaticamente em pull requests e atualizações da branch `main`. O objetivo é detectar regressões de tipagem; a validação de tipos **não substitui** testes funcionais ou testes no dispositivo.
+
 ## Navegação
 
 O app usa **React Navigation** com duas navegações combinadas (aninhadas):
